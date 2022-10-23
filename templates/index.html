@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='/css/style.css')}}">
+    <title>Main</title>
+</head>
+<body>
+    <div><h1>Выберите факультет</h1>
+        {% for i in house %}
+        <a href="/{{i}}"><button>{{i}}</button></a>
+        {% endfor %}
+       
+    </div>
+    <div id="q1">
+        {% for i in data %}
+            <div class="q2">
+            <h3>Имя: {{ i.name }}</h3>
+            <img src="{{ i.image }}" alt="" class="s1">
+            <h4>Альтернативное имя: {{i.alternate_names}}</h4>
+            <h4>Вид: {{i.species}}</h4>
+            <h4>Пол: {{i.gender}}</h4>
+            <h4>Дата рождения: {{i.dateOfBirth}}</h4>
+            <h4>Волшебник: {{i.wizard}}</h4>
+            <h4>Кровь: {{i.ancestry}}</h4>
+            <h4>Цвет глаз: {{i.eyeColour}}</h4>
+            <h4>Цвет волос: {{i.hairColour}}</h4>
+            <h4>Волшебная палочка: {{i.wand}}</h4>
+            <h4>Патронус: {{i.patronus}}</h4>
+            <h4>Студент: {{i.hogwartsStudent}}</h4>
+            <h4>Служащий: {{i.hogwartsStaff}}</h4>
+            <h4>Актер: {{i.actor}}</h4>
+            <h4>Альтернативный актер: {{i.alternate_actors}}</h4>
+            <h4>Живой: {{i.alive}}</h4>
+            <h4>Факультет: {{ i.house }}</h4><br>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

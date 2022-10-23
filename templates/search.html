@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+</head>
+<body>
+    <form action="/index/search" method="GET">
+        <input type="text" id="name" name="name">
+        <input type="submit" value="Search">
+    </form>
+    <div>
+        {% for i in data %}
+            {% if key in i.name %}
+                <h3>{{i.name}}</h3>
+            {% endif %}
+        {%endfor%}
+    </div>
+</body>
+</html>
